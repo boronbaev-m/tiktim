@@ -25,7 +25,7 @@ async def help_command(update: Update, context: ContextTypes.DEFAULT_TYPE) -> No
 async def register(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
     keyboard = [
         [InlineKeyboardButton("Sewer at home", callback_data='home_sewer')],
-        [InlineKeyboardButton("Sewer in factory", callback_data='sewer')],
+        [InlineKeyboardButton("Sewer in factory", callback_data='sewer_in_factory')],
         [InlineKeyboardButton("Factory", callback_data='factory')],
         [InlineKeyboardButton("Technologist", callback_data='technologist')]
     ]
@@ -65,10 +65,12 @@ async def button(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
     elif context.user_data['registration_step'] == 3.5 and query.data in ['use_current_telegram', 'use_other_telegram']:
         telegram_choice = query.data
         if telegram_choice == 'use_current_telegram':
-            context.user_data['telegram'] = query.from_user.username
             if 'contacts' not in context.user_data:
-                context.user_data['contacts'] = []
-            context.user_data['contacts'].append('telegram')
+                context.user_data['contacts'] = {}
+            if 'telegram' not in context.user_data['contacts']:
+                context.user_data['contacts']['telegram'] = []
+            if query.from_user.username not in context.user_data['contacts']['telegram']:
+                context.user_data['contacts']['telegram'].append(query.from_user.username)
             keyboard = [
                 [InlineKeyboardButton("Phone Number", callback_data='phone')],
                 [InlineKeyboardButton("Telegram", callback_data='telegram')],
@@ -178,10 +180,12 @@ async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE) -> 
         await update.message.reply_text('Please provide your contact details:', reply_markup=reply_markup)
 
     elif context.user_data.get('registration_step') == 3.5:
-        context.user_data[context.user_data['current_contact']] = update.message.text
         if 'contacts' not in context.user_data:
-            context.user_data['contacts'] = []
-        context.user_data['contacts'].append(context.user_data['current_contact'])
+            context.user_data['contacts'] = {}
+        if context.user_data['current_contact'] not in context.user_data['contacts']:
+            context.user_data['contacts'][context.user_data['current_contact']] = []
+        if update.message.text not in context.user_data['contacts'][context.user_data['current_contact']]:
+            context.user_data['contacts'][context.user_data['current_contact']].append(update.message.text)
         keyboard = [
             [InlineKeyboardButton("Phone Number", callback_data='phone')],
             [InlineKeyboardButton("Telegram", callback_data='telegram')],
@@ -194,10 +198,12 @@ async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE) -> 
         await update.message.reply_text('Contact details saved. You can add more or press Done.', reply_markup=reply_markup)
 
     elif context.user_data.get('registration_step') == 3.6:
-        context.user_data['telegram'] = update.message.text
         if 'contacts' not in context.user_data:
-            context.user_data['contacts'] = []
-        context.user_data['contacts'].append('telegram')
+            context.user_data['contacts'] = {}
+        if 'telegram' not in context.user_data['contacts']:
+            context.user_data['contacts']['telegram'] = []
+        if update.message.text not in context.user_data['contacts']['telegram']:
+            context.user_data['contacts']['telegram'].append(update.message.text)
         keyboard = [
             [InlineKeyboardButton("Phone Number", callback_data='phone')],
             [InlineKeyboardButton("Telegram", callback_data='telegram')],
@@ -293,24 +299,32 @@ async def complete_registration(update_or_query, context: ContextTypes.DEFAULT_T
     images = context.user_data.get('images', [])
 
     # Prepare the message for the group chat
-    contact_details = '\n'.join([f"{contact.capitalize()}: {context.user_data.get(contact, '')}" for contact in context.user_data.get('contacts', [])])
-    if 'telegram' in context.user_data:
-        contact_details = contact_details.replace(f"Telegram: {context.user_data['telegram']}", f"Telegram: @{context.user_data['telegram']}")
-
-    message = (f"Role: {role.replace('_', ' ').capitalize()}\n"
-               f"Full Name: {full_name}\n"
-               f"Years of Experience: {years_of_experience}\n"
-               f"Work Experience: {work_experience}\n"
-               f"Factories: {factories}\n"
-               f"Completed Orders: {completed_orders}\n"
-               f"Products: {products}\n"
-               f"Contact Details:\n{contact_details}")
+    contact_details = ''
+    for contact_type, contacts in context.user_data.get('contacts', {}).items():
+        contact_details += f"{contact_type.capitalize()}:\n"
+        for contact in contacts:
+            if contact_type == 'telegram':
+                contact_details += f"@{contact}\n"
+            else:
+                contact_details += f"{contact}\n"
+    
+    message = (
+        f"Role: {role.replace('_', ' ').capitalize()}\n"
+        f"Full Name: {full_name}\n"
+        f"Years of Experience: {years_of_experience}\n"
+        f"Work Experience: {work_experience}\n"
+        f"Factories: {factories}\n"
+        f"Completed Orders: {completed_orders}\n"
+        f"Products: {products}\n"
+        f"Contact Details:\n{contact_details.strip()}"
+    )
 
     await context.bot.send_message(chat_id=GROUP_CHAT_ID, text=message)
     for image in images:
         await context.bot.send_photo(chat_id=GROUP_CHAT_ID, photo=image)
 
     await update_or_query.edit_message_text('Registration completed! Thank you.')
+
 
 def main() -> None:
     application = Application.builder().token(API_TOKEN).build()
