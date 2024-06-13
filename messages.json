@@ -1,0 +1,284 @@
+{
+    "start_message": "Tiktim ботко кош келиңиз! Каттоону баштоо үчүн aстындагы кнопканы колдонуңуз.\nДобро пожаловать в Tiktim Bot! Используйте кнопку ниже для начала регистрации.\nWelcome to the Tiktim Bot! Use button below to start registration.",
+    "choose_language": "Сураныч, тилиңизди тандаңыз.\nПожалуйста, выберите ваш язык.\nPlease choose your language.",
+    "welcome": {
+        "lang_en": "Welcome to the Tiktim Bot! Use /register to start registration.",
+        "lang_ru": "Добро пожаловать в Tiktim Bot! Используйте /register для начала регистрации.",
+        "lang_ky": "Tiktim ботко кош келиңиз! Каттоону баштоо үчүн /register колдонуңуз."
+    },
+    "start_button": {
+        "lang_en": "Start registration",
+        "lang_ru": "Начать регистрацию",
+        "lang_ky": "Каттоону баштоо"
+    },
+    "help": {
+        "lang_en": "Use /start to register.",
+        "lang_ru": "Используйте /start для регистрации.",
+        "lang_ky": "/start колдонуңуз."
+    },
+    "role_selection": {
+        "lang_en": "Please choose your role:",
+        "lang_ru": "Пожалуйста, выберите вашу роль:",
+        "lang_ky": "Ролду тандаңыз:"
+    },
+    "choose_role": {
+        "lang_en": "Please choose your role.",
+        "lang_ru": "Пожалуйста, выберите вашу роль.",
+        "lang_ky": "Ролду тандаңыз."
+    },
+    "home_sewer": {
+        "lang_en": "Sewer at home",
+        "lang_ru": "Портной на дому",
+        "lang_ky": "Үйдөгү тигүүчү"
+    },
+    "sewer_in_factory": {
+        "lang_en": "Sewer in factory",
+        "lang_ru": "Портной на фабрике",
+        "lang_ky": "Фабрикадагы тигүүчү"
+    },
+    "factory": {
+        "lang_en": "Factory",
+        "lang_ru": "Фабрика",
+        "lang_ky": "Фабрика"
+    },
+    "technologist": {
+        "lang_en": "Technologist",
+        "lang_ru": "Технолог",
+        "lang_ky": "Технолог"
+    },
+    "role_selected": {
+        "lang_en": "You selected: {}. Please provide your full name.",
+        "lang_ru": "Вы выбрали: {}. Пожалуйста, укажите ваше полное имя.",
+        "lang_ky": "Сиз тандадыңыз: {}. Толук атыңызды бериңиз."
+    },
+    "provide_contact_details": {
+        "lang_en": "Please provide your contact details:",
+        "lang_ru": "Пожалуйста, укажите ваши контактные данные:",
+        "lang_ky": "Байланыш маалыматыңызды бериңиз:"
+    },
+    "phone_number": {
+        "lang_en": "Phone Number",
+        "lang_ru": "Номер телефона",
+        "lang_ky": "Телефон номери"
+    },
+    "done": {
+        "lang_en": "Done",
+        "lang_ru": "Готово",
+        "lang_ky": "Бүттү"
+    },
+    "contact_details_saved": {
+        "lang_en": "Contact details saved. You can add more or press Done.",
+        "lang_ru": "Контактные данные сохранены. Вы можете добавить еще или нажать Готово.",
+        "lang_ky": "Байланыш маалыматы сакталды. Сиз дагы кошо аласыз же Бүттү басыңыз."
+    },
+    "telegram_contact_saved": {
+        "lang_en": "Telegram contact saved. You can add more contact details or press Done.",
+        "lang_ru": "Контакт Telegram сохранен. Вы можете добавить еще контактные данные или нажать Готово.",
+        "lang_ky": "Telegram контакты сакталды. Сиз дагы байланыш маалыматтарын кошо аласыз же Бүттү басыңыз."
+    },
+    "telegram_choice": {
+        "lang_en": "Do you want to use your current Telegram username or provide a different one?",
+        "lang_ru": "Вы хотите использовать текущее имя пользователя Telegram или указать другое?",
+        "lang_ky": "Учурдагы Telegram колдонуучу атыңызды колдонгуңуз келеби же башкасын бересизби?"
+    },
+    "use_current_telegram": {
+        "lang_en": "Use Current Telegram Account",
+        "lang_ru": "Использовать текущий аккаунт Telegram",
+        "lang_ky": "Учурдагы Telegram аккаунтун колдонуңуз"
+    },
+    "use_other_telegram": {
+        "lang_en": "Use Another Telegram Account",
+        "lang_ru": "Использовать другой аккаунт Telegram",
+        "lang_ky": "Башка Telegram аккаунтун колдонуңуз"
+    },
+    "using_current_telegram": {
+        "lang_en": "Using current Telegram username: @{}",
+        "lang_ru": "Используется текущее имя пользователя Telegram: @{}",
+        "lang_ky": "Учурдагы Telegram колдонуучу аты колдонулууда: @{}"
+    },
+    "provide_telegram_username": {
+        "lang_en": "Please provide your Telegram username.",
+        "lang_ru": "Пожалуйста, укажите ваше имя пользователя Telegram.",
+        "lang_ky": "Telegram колдонуучу атыңызды жазыңыз."
+    },
+    "provide_experience_years": {
+        "lang_en": "Please provide the number of years you have been working.",
+        "lang_ru": "Пожалуйста, укажите количество лет, которые вы работаете.",
+        "lang_ky": "Иштеген жылдарыңызды көрсөтүңүз."
+    },
+    "provide_numbers_only": {
+        "lang_en": "Please answer only with numbers, try again. Please provide the number of years you have been working.",
+        "lang_ru": "Пожалуйста, отвечайте только цифрами, попробуйте еще раз. Укажите количество лет, которые вы работаете.",
+        "lang_ky": "Сураныч, жоопту сандар менен гана бериңиз, кайра аракет кылыңыз. Иштеген жылдарыңызды көрсөтүңүз."
+    },
+    "provide_work_experience": {
+        "lang_en": "Please provide your work experience details.",
+        "lang_ru": "Пожалуйста, укажите подробности вашего опыта работы.",
+        "lang_ky": "Иш тажрыйбаңыз жөнүндө маалымат бериңиз."
+    },
+    "provide_factories": {
+        "lang_en": "Do you want to name factories where you worked?",
+        "lang_ru": "Хотите указать заводы, где вы работали?",
+        "lang_ky": "Иштеген фабрикаларыңызды атасаңыз болобу?"
+    },
+    "factories_list": {
+        "lang_en": "Please list the factories where you worked.",
+        "lang_ru": "Пожалуйста, перечислите заводы, на которых вы работали.",
+        "lang_ky": "Иштеген фабрикаларыңызды тизмектеп бериңиз."
+    },
+    "provide_products": {
+        "lang_en": "Please select the things you can make.",
+        "lang_ru": "Пожалуйста, выберите, что вы можете делать.",
+        "lang_ky": "Сиз жасай ала турган нерселерди тандаңыз."
+    },
+    "other_products_received": {
+        "lang_en": "Other products received. Please select more or press Done.",
+        "lang_ru": "Другие продукты получены. Пожалуйста, выберите еще или нажмите Готово.",
+        "lang_ky": "Башка продуктулар кабыл алынган. Сураныч, дагы тандаңыз же Бүттү басыңыз."
+    },
+    "provide_orders": {
+        "lang_en": "Do you want to provide details of completed orders?",
+        "lang_ru": "Хотите указать детали выполненных заказов?",
+        "lang_ky": "Аткарылган буйрутмалардын чоо-жайын берүүнү каалайсызбы?"
+    },
+    "product_added": {
+        "lang_en": "Product added.",
+        "lang_ru": "Продукт добавлен.",
+        "lang_ky": "Продукт кошулду."
+    },
+    "product_already_added": {
+        "lang_en": "Product already added.",
+        "lang_ru": "Продукт уже добавлен.",
+        "lang_ky": "Продукт мурунтан эле кошулган."
+    },
+    "provide_orders_details": {
+        "lang_en": "Please provide details of completed orders.",
+        "lang_ru": "Пожалуйста, укажите детали выполненных заказов.",
+        "lang_ky": "Аткарылган буйрутмалардын чоо-жайын жазыңыз."
+    },
+    "provide_other_products": {
+        "lang_en": "Please specify other products you can make.",
+        "lang_ru": "Пожалуйста, укажите другие продукты, которые вы можете сделать.",
+        "lang_ky": "Сиз жасай ала турган башка продуктуларды тактаңыз."
+    },
+    "provide_images": {
+        "lang_en": "Do you want to upload images of your works?",
+        "lang_ru": "Хотите загрузить изображения ваших работ?",
+        "lang_ky": "Ишиңиздин сүрөттөрүн жүктөөнү каалайсызбы?"
+    },
+    "image_received": {
+        "lang_en": "Image received. You can add more images or press Done.",
+        "lang_ru": "Изображение получено. Вы можете добавить еще изображения или нажать Готово.",
+        "lang_ky": "Сүрөт кабыл алынган. Сиз дагы сүрөт кошо аласыз же Бүттү басыңыз."
+    },
+    "upload_image": {
+        "lang_en": "Please upload an image.",
+        "lang_ru": "Пожалуйста, загрузите изображение.",
+        "lang_ky": "Сүрөттү жүктөңүз."
+    },
+    "registration_completed": {
+        "lang_en": "Registration completed. Thank you!",
+        "lang_ru": "Регистрация завершена. Спасибо!",
+        "lang_ky": "Каттоо аяктады. Рахмат!"
+    },
+    "role": {
+        "lang_en": "Role",
+        "lang_ru": "Роль",
+        "lang_ky": "Роль"
+    },
+    "full_name": {
+        "lang_en": "Full Name",
+        "lang_ru": "Полное имя",
+        "lang_ky": "Толук аты-жөнү"
+    },
+    "years_of_experience": {
+        "lang_en": "Years of Experience",
+        "lang_ru": "Количество лет опыта",
+        "lang_ky": "Иштеген жылдары"
+    },
+    "work_experience": {
+        "lang_en": "Work Experience",
+        "lang_ru": "Опыт работы",
+        "lang_ky": "Иш тажрыйбасы"
+    },
+    "factories": {
+        "lang_en": "Factories",
+        "lang_ru": "Фабрики",
+        "lang_ky": "Фабрикалар"
+    },
+    "completed_orders": {
+        "lang_en": "Completed Orders",
+        "lang_ru": "Выполненные заказы",
+        "lang_ky": "Аткарылган буйрутмалар"
+    },
+    "products": {
+        "lang_en": "Products",
+        "lang_ru": "Продукты",
+        "lang_ky": "Продуктулар"
+    },
+    "contact_details": {
+        "lang_en": "Contact Details",
+        "lang_ru": "Контактные данные",
+        "lang_ky": "Байланыш маалыматтары"
+    },
+    "shirts": {
+        "lang_en": "Shirts",
+        "lang_ru": "Рубашки",
+        "lang_ky": "Көйнөктөр"
+    },
+    "pants": {
+        "lang_en": "Pants",
+        "lang_ru": "Брюки",
+        "lang_ky": "Шымдар"
+    },
+    "jackets": {
+        "lang_en": "Jackets",
+        "lang_ru": "Куртки",
+        "lang_ky": "Курткалар"
+    },
+    "sweaters": {
+        "lang_en": "Sweaters",
+        "lang_ru": "Свитеры",
+        "lang_ky": "Свитерлер"
+    },
+    "other": {
+        "lang_en": "Other",
+        "lang_ru": "Другое",
+        "lang_ky": "Башка"
+    },
+    "yes": {
+        "lang_en": "Yes",
+        "lang_ru": "Да",
+        "lang_ky": "Ооба"
+    },
+    "no": {
+        "lang_en": "No",
+        "lang_ru": "Нет",
+        "lang_ky": "Жок"
+    },
+    "yes_orders": {
+        "lang_en": "Yes, I have completed orders to provide.",
+        "lang_ru": "Да, у меня есть завершенные заказы, чтобы предоставить.",
+        "lang_ky": "Ооба, аткарылган буйрутмаларды берүүнү каалайм."
+    },
+    "no_orders": {
+        "lang_en": "No, I don’t have completed orders to provide.",
+        "lang_ru": "Нет, у меня нет завершенных заказов, чтобы предоставить.",
+        "lang_ky": "Жок, аткарылган буйрутмаларды берүүнү каалабайм."
+    },
+    "yes_images": {
+        "lang_en": "Yes, I want to upload images.",
+        "lang_ru": "Да, я хочу загрузить изображения.",
+        "lang_ky": "Ооба, сүрөттөрдү жүктөөнү каалайм."
+    },
+    "no_images": {
+        "lang_en": "No, I don’t want to upload images.",
+        "lang_ru": "Нет, я не хочу загружать изображения.",
+        "lang_ky": "Жок, сүрөттөрдү жүктөөнү каалабайм."
+    },
+    "upload_images": {
+        "lang_en": "Please upload images of your works.",
+        "lang_ru": "Пожалуйста, загрузите изображения ваших работ.",
+        "lang_ky": "Ишиңиздин сүрөттөрүн жүктөңүз."
+    }
+}
