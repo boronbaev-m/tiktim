@@ -51,6 +51,16 @@
         "lang_ru": "Вы выбрали: {}. Пожалуйста, укажите ваше полное имя.",
         "lang_ky": "Сиз тандадыңыз: {}. Толук атыңызды бериңиз."
     },
+    "role_selected_factory": {
+        "lang_en": "You selected: {}. Please provide factory's name.",
+        "lang_ru": "Вы выбрали: {}. Пожалуйста, укажите название цеха.",
+        "lang_ky": "Сиз тандадыңыз: {}. Цехтин атын бериңиз."
+    },
+    "factory_searching_role": {
+        "lang_en": "Who you are searching for?",
+        "lang_ru": "Кого вы ищете?",
+        "lang_ky": "Кимди издеп жатасыз?"
+    },
     "provide_contact_details": {
         "lang_en": "Please provide your contact details:",
         "lang_ru": "Пожалуйста, укажите ваши контактные данные:",
@@ -106,12 +116,32 @@
         "lang_ru": "Пожалуйста, укажите количество лет, которые вы работаете.",
         "lang_ky": "Иштеген жылдарыңызды көрсөтүңүз."
     },
-    "provide_numbers_only": {
-        "lang_en": "Please answer only with numbers, try again. Please provide the number of years you have been working.",
-        "lang_ru": "Пожалуйста, отвечайте только цифрами, попробуйте еще раз. Укажите количество лет, которые вы работаете.",
-        "lang_ky": "Сураныч, жоопту сандар менен гана бериңиз, кайра аракет кылыңыз. Иштеген жылдарыңызды көрсөтүңүз."
+    "provide_address": {
+        "lang_en": "Please provide the address of your factory.",
+        "lang_ru": "Пожалуйста, укажите адрес вашего цеха.",
+        "lang_ky": "Цехтын адресин жазыңыз."
+    },
+    "provide_order_details": {
+        "lang_en": "Please provide order details.",
+        "lang_ru": "Пожалуйста, укажите подробности работы.",
+        "lang_ky": "Иш жөнүндө маалымат бериңиз."
+    },
+    "provide_salary": {
+        "lang_en": "Do you want to provide salary information?",
+        "lang_ru": "Хотите указать зарплату?",
+        "lang_ky": "Айлык боюнча маалымат бергиниз келеби?"
+    },
+    "salary_details": {
+        "lang_en": "Plase, provide salary information.",
+        "lang_ru": "Пожалуйста, укажите зарплату.",
+        "lang_ky": "Айлык боюнча маалымат бериниз."
     },
     "provide_work_experience": {
+        "lang_en": "Do you want to provide your work experience details?",
+        "lang_ru": "Вы хотите указать подробности вашего опыта работы?",
+        "lang_ky": "Иш тажрыйбаңыз жөнүндө маалымат бергиңиз келеби?"
+    },
+    "work_experience_details": {
         "lang_en": "Please provide your work experience details.",
         "lang_ru": "Пожалуйста, укажите подробности вашего опыта работы.",
         "lang_ky": "Иш тажрыйбаңыз жөнүндө маалымат бериңиз."
@@ -161,6 +191,11 @@
         "lang_ru": "Пожалуйста, укажите другие продукты, которые вы можете сделать.",
         "lang_ky": "Сиз жасай ала турган башка продуктуларды тактаңыз."
     },
+    "provide_images_factory": {
+        "lang_en": "Do you want to upload images of your factory or work that will be done?",
+        "lang_ru": "Хотите загрузить изображения вашего цеха или работ, которые будут выполняться?",
+        "lang_ky": "Цехтин же кылчу иштердин сүрөттөрүн жүктөөнү каалайсызбы?"
+    },
     "provide_images": {
         "lang_en": "Do you want to upload images of your works?",
         "lang_ru": "Хотите загрузить изображения ваших работ?",
@@ -185,6 +220,31 @@
         "lang_en": "Role",
         "lang_ru": "Роль",
         "lang_ky": "Роль"
+    },
+    "factory_name": {
+        "lang_en": "Factory Name",
+        "lang_ru": "Название фабрики",
+        "lang_ky": "Фабриканын аты"
+    },
+    "factory_searching_for": {
+        "lang_en": "Factory Searching For",
+        "lang_ru": "Фабрика ищет",
+        "lang_ky": "Фабрика издейт"
+    },
+    "address": {
+        "lang_en": "Address",
+        "lang_ru": "Адрес",
+        "lang_ky": "Адрес"
+    },
+    "order_details": {
+        "lang_en": "Order Details",
+        "lang_ru": "Детали заказа",
+        "lang_ky": "Заказдын чоо-жайы"
+    },
+    "salary": {
+        "lang_en": "Salary",
+        "lang_ru": "Зарплата",
+        "lang_ky": "Айлык"
     },
     "full_name": {
         "lang_en": "Full Name",
