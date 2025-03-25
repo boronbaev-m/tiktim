@@ -16,6 +16,7 @@ logger = logging.getLogger(__name__)
 with open("token.txt", "r") as f:
     API_TOKEN = f.read()
 GROUP_CHAT_ID = -1002247296794
+EVAL_CHAT_ID = -1002220082696
 
 with open('message_texts.json', 'r', encoding='utf-8') as file:
     message_texts = json.load(file)
@@ -43,7 +44,48 @@ async def button(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
     await query.answer()
     language = context.user_data.get('language', 'lang_ru')
 
-    if context.user_data['registration_step'] == 'language_selection':
+    if context.user_data.get('registration_step', '') == '':
+        context.user_data['registration_step'] = 'start'
+        keyboard = [
+            [InlineKeyboardButton(get_message_text('Баштоо/Начать/Start', language), callback_data='start')]
+        ]
+        reply_markup = InlineKeyboardMarkup(keyboard)
+        await update.message.reply_text(message_texts['start_message'])
+
+    elif context.user_data['registration_step'] == 'start':
+        if query.data == 'start':
+            context.user_data.clear()
+            keyboard = [
+                [InlineKeyboardButton("Кыргызча", callback_data='lang_ky')],
+                [InlineKeyboardButton("Русский", callback_data='lang_ru')],
+                [InlineKeyboardButton("English", callback_data='lang_en')]
+            ]
+            reply_markup = InlineKeyboardMarkup(keyboard)
+            context.user_data['registration_step'] = 'language_selection'
+            await query.edit_message_text(message_texts['choose_language'], reply_markup=reply_markup)
+
+    elif context.user_data['registration_step'] == 'evaluation_rating':
+        rating = query.data
+        context.user_data['rating'] = rating
+        context.user_data['registration_step'] = 'provide_evaluation'
+        keyboard = [
+                    [InlineKeyboardButton(get_message_text('yes', language), callback_data='yes_eval')],
+                    [InlineKeyboardButton(get_message_text('no', language), callback_data='no_eval')]
+                ]
+        reply_markup = InlineKeyboardMarkup(keyboard)   
+        await query.edit_message_text(get_message_text('provide_evaluation', language), reply_markup=reply_markup)
+        
+    elif context.user_data['registration_step'] == 'provide_evaluation':
+        if query.data == 'yes_eval':
+            context.user_data['registration_step'] = 'evaluation_details'
+            await query.edit_message_text(get_message_text('evaluation_details', language))
+        else:
+            rating = context.user_data['rating']
+            await context.bot.send_message(chat_id=EVAL_CHAT_ID, text=f'Rating: {rating}')
+            await query.edit_message_text(get_message_text('complete_evaluation', language))
+            context.user_data.clear()
+    
+    elif context.user_data['registration_step'] == 'language_selection':
         language = query.data
         context.user_data['language'] = language
         keyboard = [
@@ -55,7 +97,7 @@ async def button(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
         reply_markup = InlineKeyboardMarkup(keyboard)
         context.user_data['registration_step'] = 1
         await query.edit_message_text(get_message_text('choose_role', language), reply_markup=reply_markup)
-
+            
     elif context.user_data['registration_step'] == 1:
         role = query.data
         context.user_data['role'] = role
@@ -147,7 +189,7 @@ async def button(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
         elif query.data == 'done_images':
             await complete_registration(query, context)
             
-    else:
+    elif context.user_data['role'] in ['home_sewer', 'sewer_in_factory', 'technologist']:
         if context.user_data['registration_step'] == 3:
             contact_type = query.data
             if contact_type == 'done':
@@ -274,7 +316,23 @@ async def button(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
 async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
     language = context.user_data.get('language', 'lang_ru')
 
-    if context.user_data['role'] == 'factory':
+    if context.user_data.get('registration_step', '') == '' or context.user_data.get('registration_step', '') == 'start':
+        context.user_data['registration_step'] = 'start'
+        keyboard = [
+            [InlineKeyboardButton('Баштоо/Начать/Start', callback_data='start')]
+        ]
+        reply_markup = InlineKeyboardMarkup(keyboard)
+        await update.message.reply_text(message_texts['start_message'], reply_markup=reply_markup)
+
+    elif context.user_data['registration_step'] == 'evaluation_details':
+        context.user_data['evaluation_details'] = update.message.text
+        rating = context.user_data['rating']
+        await update.message.reply_text(get_message_text('complete_evaluation', language))
+        await context.bot.send_message(chat_id=EVAL_CHAT_ID, text=f'Rating: {rating}\nFeedback: {update.message.text}')
+
+        context.user_data.clear()
+
+    elif context.user_data['role'] == 'factory':
         if context.user_data.get('registration_step') == 2:
             context.user_data['factory_name'] = update.message.text
             context.user_data['registration_step'] = 2.5
@@ -362,8 +420,7 @@ async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE) -> 
             else:
                 await update.message.reply_text(get_message_text('upload_image', language), reply_markup=reply_markup)
 
-            
-    else:
+    elif context.user_data['role'] in ['home_sewer', 'sewer_in_factory', 'technologist']:
         if context.user_data.get('registration_step') == 2:
             context.user_data['full_name'] = update.message.text
             context.user_data['registration_step'] = 3
@@ -538,7 +595,16 @@ async def complete_registration(update_or_query, context: ContextTypes.DEFAULT_T
         media_group = [InputMediaPhoto(media=image) for image in images]
         await context.bot.send_media_group(chat_id=GROUP_CHAT_ID, media=media_group)
     
-    await update_or_query.edit_message_text(get_message_text('registration_completed', language))
+    context.user_data['registration_step'] = 'evaluation_rating'
+    keyboard = [
+                [InlineKeyboardButton(1, callback_data=1)],
+                [InlineKeyboardButton(2, callback_data=2)],
+                [InlineKeyboardButton(3, callback_data=3)],
+                [InlineKeyboardButton(4, callback_data=4)],
+                [InlineKeyboardButton(5, callback_data=5)],
+            ]
+    reply_markup = InlineKeyboardMarkup(keyboard)
+    await update_or_query.edit_message_text(get_message_text('registration_completed', language), reply_markup=reply_markup)
 
 
 def main() -> None:

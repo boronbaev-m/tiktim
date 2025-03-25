@@ -1,10 +1,10 @@
 {
-    "start_message": "Tiktim ботко кош келиңиз! Каттоону баштоо үчүн aстындагы кнопканы колдонуңуз.\nДобро пожаловать в Tiktim Bot! Используйте кнопку ниже для начала регистрации.\nWelcome to the Tiktim Bot! Use button below to start registration.",
+    "start_message": "Tiktim ботко кош келиңиз! Каттоону баштоо үчүн aстындагы кнопканы колдонуңуз же /start жазыныз.\nДобро пожаловать в Tiktim Bot! Используйте кнопку ниже для начала регистрации или напишите /start.\nWelcome to the Tiktim Bot! Use button below to start registration or type /start.",
     "choose_language": "Сураныч, тилиңизди тандаңыз.\nПожалуйста, выберите ваш язык.\nPlease choose your language.",
     "welcome": {
         "lang_en": "Welcome to the Tiktim Bot! Use /register to start registration.",
         "lang_ru": "Добро пожаловать в Tiktim Bot! Используйте /register для начала регистрации.",
-        "lang_ky": "Tiktim ботко кош келиңиз! Каттоону баштоо үчүн /register колдонуңуз."
+        "lang_ky": "Саламатсызбы! Tiktim бот сизге жардам берүүгө даяр. Вакансияңызды жарыялоо үчүн /register басыңыз."
     },
     "start_button": {
         "lang_en": "Start registration",
@@ -17,29 +17,29 @@
         "lang_ky": "/start колдонуңуз."
     },
     "role_selection": {
-        "lang_en": "Please choose your role:",
-        "lang_ru": "Пожалуйста, выберите вашу роль:",
-        "lang_ky": "Ролду тандаңыз:"
+        "lang_en": "What is your occupation? Choose one of the options:",
+        "lang_ru": "Какой ваш род деятельности? Выберите один из вариантов:",
+        "lang_ky": "Сиздин кесибиңиз кандай? Кесибиңизди танданыз:"
     },
     "choose_role": {
-        "lang_en": "Please choose your role.",
-        "lang_ru": "Пожалуйста, выберите вашу роль.",
-        "lang_ky": "Ролду тандаңыз."
+        "lang_en": "What is your occupation? Choose one of the options:",
+        "lang_ru": "Какой ваш род деятельности? Выберите один из вариантов:",
+        "lang_ky": "Сиздин кесибиңиз кандай? Кесибиңизди танданыз:"
     },
     "home_sewer": {
         "lang_en": "Sewer at home",
-        "lang_ru": "Портной на дому",
+        "lang_ru": "Швея-надомница",
         "lang_ky": "Үйдөгү тигүүчү"
     },
     "sewer_in_factory": {
         "lang_en": "Sewer in factory",
-        "lang_ru": "Портной на фабрике",
-        "lang_ky": "Фабрикадагы тигүүчү"
+        "lang_ru": "Швея в цех",
+        "lang_ky": "Цехтеги тигүүчү"
     },
     "factory": {
         "lang_en": "Factory",
-        "lang_ru": "Фабрика",
-        "lang_ky": "Фабрика"
+        "lang_ru": "Швейный цех",
+        "lang_ky": "Швейный цех"
     },
     "technologist": {
         "lang_en": "Technologist",
@@ -49,7 +49,7 @@
     "role_selected": {
         "lang_en": "You selected: {}. Please provide your full name.",
         "lang_ru": "Вы выбрали: {}. Пожалуйста, укажите ваше полное имя.",
-        "lang_ky": "Сиз тандадыңыз: {}. Толук атыңызды бериңиз."
+        "lang_ky": "Сиз тандадыңыз: {}. Толук аты-жөнүңүздү жазыңыз."
     },
     "role_selected_factory": {
         "lang_en": "You selected: {}. Please provide factory's name.",
@@ -113,8 +113,8 @@
     },
     "provide_experience_years": {
         "lang_en": "Please provide the number of years you have been working.",
-        "lang_ru": "Пожалуйста, укажите количество лет, которые вы работаете.",
-        "lang_ky": "Иштеген жылдарыңызды көрсөтүңүз."
+        "lang_ru": "Укажите, сколько лет/месяцев опыта работы вы имеете.",
+        "lang_ky": "Канча жыл/ай иш тажрыйбаңыз бар? Жазып коюңуз."
     },
     "provide_address": {
         "lang_en": "Please provide the address of your factory.",
@@ -148,13 +148,13 @@
     },
     "provide_factories": {
         "lang_en": "Do you want to name factories where you worked?",
-        "lang_ru": "Хотите указать заводы, где вы работали?",
-        "lang_ky": "Иштеген фабрикаларыңызды атасаңыз болобу?"
+        "lang_ru": "Хотите указать швейные цеха, где вы работали?",
+        "lang_ky": "Иштеген цехтерди атасаңыз болобу?"
     },
     "factories_list": {
         "lang_en": "Please list the factories where you worked.",
-        "lang_ru": "Пожалуйста, перечислите заводы, на которых вы работали.",
-        "lang_ky": "Иштеген фабрикаларыңызды тизмектеп бериңиз."
+        "lang_ru": "Пожалуйста, перечислите швейные цеха, на которых вы работали.",
+        "lang_ky": "Иштеген цехтерди тизмектеп бериңиз."
     },
     "provide_products": {
         "lang_en": "Please select the things you can make.",
@@ -169,7 +169,7 @@
     "provide_orders": {
         "lang_en": "Do you want to provide details of completed orders?",
         "lang_ru": "Хотите указать детали выполненных заказов?",
-        "lang_ky": "Аткарылган буйрутмалардын чоо-жайын берүүнү каалайсызбы?"
+        "lang_ky": "Аткарылган буйрутмалар тууралуу кененирээк маалымат бергиңиз келеби??"
     },
     "product_added": {
         "lang_en": "Product added.",
@@ -184,7 +184,7 @@
     "provide_orders_details": {
         "lang_en": "Please provide details of completed orders.",
         "lang_ru": "Пожалуйста, укажите детали выполненных заказов.",
-        "lang_ky": "Аткарылган буйрутмалардын чоо-жайын жазыңыз."
+        "lang_ky": "Аткарылган буйрутмалар тууралуу кененирээк маалымат бериңиз."
     },
     "provide_other_products": {
         "lang_en": "Please specify other products you can make.",
@@ -204,7 +204,7 @@
     "image_received": {
         "lang_en": "Image received. You can add more images or press Done.",
         "lang_ru": "Изображение получено. Вы можете добавить еще изображения или нажать Готово.",
-        "lang_ky": "Сүрөт кабыл алынган. Сиз дагы сүрөт кошо аласыз же Бүттү басыңыз."
+        "lang_ky": "Сүрөт кошулду. Сиз дагы сүрөттөрдү кошсоңуз болот, андан кийин \"Бүттү\" баскычын басыңыз."
     },
     "upload_image": {
         "lang_en": "Please upload an image.",
@@ -212,9 +212,9 @@
         "lang_ky": "Сүрөттү жүктөңүз."
     },
     "registration_completed": {
-        "lang_en": "Registration completed. Thank you!",
-        "lang_ru": "Регистрация завершена. Спасибо!",
-        "lang_ky": "Каттоо аяктады. Рахмат!"
+        "lang_en": "Registration is completed. Thank you! Once your job has been verified, your ad will be posted to the @. We wish you success! Rate my work from 1 to 5",
+        "lang_ru": "Регистрация завершена. Спасибо! После того, как ваша вакансия будет проверена, ваше объявление будет помещено в @. Желаем вам успехов! Оцените мою работу от 1 до 5.",
+        "lang_ky": "Каттоо аяктады. Рахмат! Сиздин вакансияңыз текшерилгенден кийин, ал @ каналга жайгаштырылат. Сизге ийгилик каалайбыз! Менин ишиме 1ден 5ке чейин баа бериңиз."
     },
     "role": {
         "lang_en": "Role",
@@ -340,5 +340,20 @@
         "lang_en": "Please upload images of your works.",
         "lang_ru": "Пожалуйста, загрузите изображения ваших работ.",
         "lang_ky": "Ишиңиздин сүрөттөрүн жүктөңүз."
+    },
+    "provide_evaluation": {
+        "lang_en": "Do you want to provide a feedback?",
+        "lang_ru": "Хотите написать отзыв?",
+        "lang_ky": "Сын-пикир жазгыңыз келеби?"
+    },
+    "evaluation_details": {
+        "lang_en": "Please provide your feedback.",
+        "lang_ru": "Пожалуйста напишите ваш отзыв.",
+        "lang_ky": "Сын-пикириңизди жазыңыз."
+    },
+    "complete_evaluation": {
+        "lang_en": "Thanks for your feedback!",
+        "lang_ru": "Спасибо за отзыв!",
+        "lang_ky": "Рахмат!"
     }
 }
